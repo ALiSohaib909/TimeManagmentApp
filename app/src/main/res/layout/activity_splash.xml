@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".Activities.SplashActivity">
+    <!--212D40-->
+
+    <ImageView
+        android:id="@+id/iv_time"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_170sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/time_splash" />
+
+    <ImageView
+        android:id="@+id/iv_load"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_110sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_time"
+        app:srcCompat="@drawable/ic_loading" />
+</androidx.constraintlayout.widget.ConstraintLayout>
