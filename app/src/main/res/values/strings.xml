@@ -4,4 +4,5 @@
     <string name="str_enter_full_name">Enter Full Name</string>
     <string name="str_email">Enter Email Address</string>
     <string name="str_password">Enter Password</string>
+    <string name="str_login">Login</string>
 </resources>
