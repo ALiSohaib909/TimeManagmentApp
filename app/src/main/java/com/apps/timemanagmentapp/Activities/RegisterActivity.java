@@ -28,35 +28,25 @@ import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    StringBuilder builder = new StringBuilder();
-    TextView textView;
+
     ActivityRegisterBinding binding;
-     static String mainurl = "http://192.168.0.102/workScheduleApp/api/";
+    static String mainurl = "http://192.168.0.102/workScheduleApp/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Objects.requireNonNull(getSupportActionBar()).hide();
-        textView = findViewById(R.id.tv_login);
-
-        String white = "Already have an account?";
-        SpannableString whiteSpannable = new SpannableString(white);
-        whiteSpannable.setSpan(new ForegroundColorSpan(Color.MAGENTA), 0, white.length(), 0);
-        builder.append(whiteSpannable);
-
-        String blue = "Login";
-        SpannableString redSpannable = new SpannableString(blue);
-
-        redSpannable.setSpan(new ForegroundColorSpan(Color.BLACK), 0, blue.length(), 0);
-        builder.append(redSpannable);
-        textView.setText(builder, TextView.BufferType.SPANNABLE);
-
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addmeeting();
+            }
+        });
+        binding.textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
     }
@@ -67,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                 binding.edRegisterPass.getText() == null) {
             Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
         } else {
-            String url = mainurl + "App/Save";
+            String url =mainurl+"App/Save";
             Log.d("urlCreate", url);
             JSONObject Object = new JSONObject();
             try {
@@ -84,7 +74,18 @@ public class RegisterActivity extends AppCompatActivity {
                     Request.Method.POST, url, Object, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
+
+                    new Thread(()->{
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }).start();
+                    new Thread(()->{
+                        RegisterActivity.this.finish();
+                        System.exit(0);
+                    }).start();
+
                 }
             }, new Response.ErrorListener() {
                 @Override

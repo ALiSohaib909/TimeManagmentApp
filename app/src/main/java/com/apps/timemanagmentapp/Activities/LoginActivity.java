@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -33,18 +34,27 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Objects.requireNonNull(getSupportActionBar()).hide();
-
-
+binding.btnRegister.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        doLogin();
+    }
+});
+binding.tvSignUp.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+    }
+});
     }
 
-    public void addmeeting() {
+    public void doLogin() {
 
         if (binding.edLoginEmail.getText() == null ||
                 binding.edLoginPass.getText() == null) {
             Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
         } else {
-            String url = mainurl + "App/Verify?"+binding.edLoginEmail+"&pass="+binding.edLoginPass;
+            String url =mainurl+"App/Verify?email="+binding.edLoginEmail.getText()+"&pass="+binding.edLoginPass.getText();
             Log.d("urlCreate", url);
 
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -58,11 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                         edit.putInt("id",response.getInt("id"));
                         edit.putString("name",response.getString("name"));
                         edit.apply();
+                        Toast.makeText(getApplicationContext(), "good to go", Toast.LENGTH_SHORT).show();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                 }
             }, new Response.ErrorListener() {
                 @Override

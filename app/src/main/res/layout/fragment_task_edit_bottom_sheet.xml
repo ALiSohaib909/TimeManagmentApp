@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_color"
+    tools:context=".Activities.ScheduleTaskActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is to be done?"
+        android:textColor="#1264af"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="serif"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="#1264af"
+        android:inputType="textPersonName"
+        android:hint="Enter Task here"
+        android:textColorHint="#575555"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:textColor="#1264af"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="serif"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+    <TextView
+        android:id="@+id/tvSelectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="03-2-2022"
+        android:textColor="#F8F8F8"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="serif"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Time"
+        android:textColor="#1264af"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="serif"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectDate" />
+    <TextView
+        android:id="@+id/tvSelectTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12:00"
+        android:textColor="#F8F8F8"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="serif"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+    <TextView
+        android:id="@+id/tvNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Notification?"
+        android:textColor="#1264af"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="serif"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectTime" />
+
+    <EditText
+        android:id="@+id/etNoti"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="#1264af"
+        android:inputType="textPersonName"
+        android:hint="Enter Notification"
+        android:textColor="@color/white"
+        android:textColorHint="#575555"
+        app:layout_constraintStart_toStartOf="@+id/tvNotification"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotification" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@+id/etNoti"
+        app:layout_constraintStart_toStartOf="@+id/etNoti"
+        app:layout_constraintTop_toBottomOf="@+id/etNoti" />
+</androidx.constraintlayout.widget.ConstraintLayout>

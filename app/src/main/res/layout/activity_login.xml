@@ -28,6 +28,7 @@
         android:layout_marginEnd="@dimen/_40sdp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
+        android:layout_marginTop="@dimen/_20sdp"
         android:hint="@string/str_password"
         android:inputType="textEmailAddress"
         android:paddingStart="@dimen/_7sdp"
@@ -41,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="233dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_login_email" />
 
     <EditText
         android:id="@+id/ed_login_email"
@@ -51,6 +52,7 @@
         android:layout_marginEnd="@dimen/_40sdp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
+        android:layout_marginTop="@dimen/_20sdp"
         android:hint="@string/str_email"
         android:inputType="textPersonName"
         android:paddingStart="@dimen/_7sdp"
@@ -64,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="147dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/btn_register"
@@ -95,4 +97,15 @@
         android:text="Already have a account?"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_login"
+        app:layout_constraintStart_toEndOf="@+id/tv_login"
+        app:layout_constraintTop_toTopOf="@+id/tv_login"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

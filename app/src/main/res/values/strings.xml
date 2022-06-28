@@ -4,5 +4,6 @@
     <string name="str_enter_full_name">Enter Full Name</string>
     <string name="str_email">Enter Email Address</string>
     <string name="str_password">Enter Password</string>
-    <string name="str_login">Login</string>
+    <string name="str_login">Login</string><!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.apps.timemanagmentapp.R;
+import com.apps.timemanagmentapp.Recievers.ForegroundService;
 import com.apps.timemanagmentapp.databinding.ActivitySplashBinding;
 
 import java.util.Objects;
@@ -19,12 +20,13 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Objects.requireNonNull(getSupportActionBar()).hide();
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         new Handler().postDelayed(() -> {
             Intent i = new Intent(
+
                     SplashActivity.this, RegisterActivity.class);
+            ForegroundService.Companion.startService(SplashActivity.this, "New Qoute is running");
             startActivity(i);
         }, 3000);
 
